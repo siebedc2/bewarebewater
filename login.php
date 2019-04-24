@@ -30,12 +30,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <title>Login</title>
 </head>
 
-<body>
-    <form action="" method="post">
-        <h2 class="formTitle">Login</h2>
+<body class="background">
+
+    <h2>Login</h2>
+
+    <img class="logo" src="images/logo.png" alt="Logo">
+
+    <form action="" method="post">     
 
         <?php if (isset($error)): ?>
         <div class="formError">
@@ -46,16 +53,16 @@
         <?php endif; ?>
         <div class="formInput">
             <div class="formField">
-                <label for="email">Email</label>
+                <label for="email">E-mailadres</label>
                 <input type="text" name="email">
             </div>
             <div class="formField">
-                <label for="password">Password</label>
+                <label for="password">Wachtwoord</label>
                 <input type="password" name="password">
             </div>
 
             <div class="formField">
-                <input type="submit" value="login" class="btn btnPrimary">
+                <input type="submit" value="Login" class="btn btnPrimary">
             </div>
         </div>
 
