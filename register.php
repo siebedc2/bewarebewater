@@ -106,12 +106,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <title>Register</title>
 </head>
 
-<body>
+<body class="background">
     <form action="" method="post">
-        <h2 class="formTitle">Signup</h2>
+        <h2>Signup</h2>
+
+        <img class="logo" src="images/logo.png" alt="Logo">
 
         <?php if (isset($error)): ?>
         <div class="formError">
@@ -123,21 +128,7 @@
 
         <div class="formInput">
             <div class="formField">
-                <label for="firstname">Firstname</label>
-                <input type="text" name="firstname">
-            </div>
-            <div class="formField">
-                <label for="lastname">Lastname</label>
-                <input type="text" name="lastname">
-            </div>
-            <div class="formField">
-                <label for="username">Username</label>
-                <p id="usernameFeedback" class="ajaxFeedback hidden"></p>
-                <input type="text" id="username" name="username">
-            </div>
-            <div class="formField">
                 <label for="email">Email</label>
-                <p id="emailFeedback" class="ajaxFeedback hidden"></p>
                 <input type="text" id="email" name="email">
             </div>
             <div class="formField">
