@@ -11,7 +11,33 @@
     <title>Dashboard</title>
 </head>
 <body class="background">
-<?php include_once("nav.inc.php"); ?>
+    <header>
+        <?php include_once("nav.inc.php"); ?>
+    </header>
+
+
+    <div class="dashboard flexbox">
+        <div class="top">
+            <p>100L</p>
+        </div>
+
+        <div class="bottom">
+            <div class="left">
+                <div class="left1">
+                    <p>left1</p>
+                </div>
+
+                <div class="left2">
+                    <p>left2</p>
+                </div>
+            </div>
+
+            <div class="right">
+                <p>right</p>
+            </div>
+        </div>
+        
+    </div>
 
 
 

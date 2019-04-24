@@ -129,3 +129,29 @@ form .redirectLink {
     color: rgba(255,255,255,.5);
     transform: translateY(-5px);
 }
+
+.dashboard .top, .dashboard .left1, .dashboard .left2, .dashboard .right {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dashboard .top {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    height: 110px;
+}
+
+.dashboard .bottom {
+    display: flex;
+}
+
+.dashboard .left1, .dashboard .left2 {
+    width: 138px;
+    height: 200px;
+}
+
+.dashboard .right {
+    height: 404px;
+    width: 140px;
+}
