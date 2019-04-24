@@ -4,29 +4,29 @@
     if( !empty($_POST) ){
 
         //Check if register fields are not empty strings
-        if( !empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['passwordConfirm']) ){
+        if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['passwordConfirm']) ){
 
-            $firstname = htmlspecialchars($_POST['firstname']);
-            $lastname = htmlspecialchars($_POST['lastname']);
-            $username = htmlspecialchars($_POST['username']);
+            //$firstname = htmlspecialchars($_POST['firstname']);
+           // $lastname = htmlspecialchars($_POST['lastname']);
+            //$username = htmlspecialchars($_POST['username']);
             $email = htmlspecialchars($_POST['email']);
             $password = htmlspecialchars($_POST['password']);
             $passwordConfirm = htmlspecialchars($_POST['passwordConfirm']);
 
             //Check if firstname is not longer than 30chars
-            if( User::maxLength($firstname, 30)){
-                $error = "Firstname cannot be longer than 30 characters.";
-            }
+            //if( User::maxLength($firstname, 30)){
+            //    $error = "Firstname cannot be longer than 30 characters.";
+            //}
 
             //Check if lastname is not longer than 30chars
-            if( User::maxLength($lastname, 30)){
-                $error = "Lastname cannot be longer than 30 characters.";
-            }
+            //if( User::maxLength($lastname, 30)){
+            //    $error = "Lastname cannot be longer than 30 characters.";
+            //}
 
             //Check if username is not longer than 30chars
-            if( User::maxLength($username, 30)){
-                $error = "Username cannot be longer than 30 characters.";
-            }
+            //if( User::maxLength($username, 30)){
+            //    $error = "Username cannot be longer than 30 characters.";
+            //}
 
             //Check if email is legit
             if( filter_var($email, FILTER_VALIDATE_EMAIL) ) {
@@ -46,12 +46,12 @@
             }
 
             //Check if username is not in our DB yet
-            if( User::isUsernameAvailable($username) ){
+            //if( User::isUsernameAvailable($username) ){
                 //Username is available, do nothing
-            }else{
+            //}else{
                 //Username is not available, show error to user
-                $error = "This username is already registered.";
-            }
+            //    $error = "This username is already registered.";
+            //}
 
             //Check if password has minimum length of 8 chars
             //Check if username is not longer than 30chars
@@ -71,9 +71,9 @@
                 //Start new user obj, set properties and call the register function
                 $user = new User();
 
-                $user->setFirstname($firstname);
-                $user->setLastname($lastname);
-                $user->setUsername($username);
+                //$user->setFirstname($firstname);
+                //$user->setLastname($lastname);
+                //$user->setUsername($username);
                 $user->setEmail($email);
                 $user->setPassword($password);
 
