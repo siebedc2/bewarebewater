@@ -107,6 +107,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <title>Register</title>
@@ -114,7 +115,7 @@
 
 <body class="background">
     <form action="" method="post">
-        <h2>Signup</h2>
+        <h2>Welkom!</h2>
 
         <img class="logo" src="images/logo.png" alt="Logo">
 
