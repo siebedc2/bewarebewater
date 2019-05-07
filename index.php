@@ -10,6 +10,7 @@
     <title>Dashboard - Be ware, Be water</title>
 </head>
 <body>
+
     <div id="dashboardContainer">
         <div class="dashboardDiv" id="usage">
             <h1 id="currentUsage">100 <span id="liter">L</span></h1>
@@ -34,6 +35,5 @@
             <h2>€99</h2>
         </div>
     </div>
-       
 </body>
 </html>

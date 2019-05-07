@@ -1,101 +1,48 @@
-// Dropdown menu /*
-var mobileIcon = document.querySelector('.dropdown_menu'); // Selecting whole menu icon
-var check = true; // Looking if dropdown is already selected or not
+// dropdown menu
 
-mobileIcon.addEventListener('click', function() { // Click Event
+let status = true;
 
-    // Selecting mobile navigation
-    var navigation = document.querySelector('.mobile_navigation');
+let line1 = document.querySelector('#menu_line_1');
+let line2 = document.querySelector('#menu_line_2');
+let line3 = document.querySelector('#menu_line_3');
 
-    // Creating transitions for mobile navigation
-    navigation.style.WebkitTransition = "all .3s";
-    navigation.style.transition = "all .3s";
+let overlay = document.querySelector('.overlay');
 
-    // Selecting all mobile menu icon elements
-    var navLine1 = document.querySelector('#menu_line_1');
-    var navLine2 = document.querySelector('#menu_line_2');
-    var navLine3 = document.querySelector('#menu_line_3');
+let nav = document.querySelector('.mobile_navigation');
 
-    // Creating transitions for mobile menu icon
-    navLine1.style.WebkitTransition = "all .3s";
-    navLine1.style.transition = "all .3s";
-    navLine2.style.WebkitTransition = "all .3s";
-    navLine2.style.transition = "all .3s";
-    navLine3.style.WebkitTransition = "all .3s";
-    navLine3.style.transition = "all .3s";
+let icon = document.querySelector('.dropdown_menu');
+icon.addEventListener('click', () => {
+    if ( status == true ) {
+        status = false;
 
-    // Selecting scroll icon
-    var scrollIcon = document.querySelector('#scrollIcon');
+        overlay.style.visibility = "visible";
+        overlay.style.opacity = "1";
 
+        line1.style.transform = "rotate(45deg)";
+        line1.style.top = "11px";
 
-    if (check === true) {
+        line2.style.opacity = "0";
 
-        // Create fixed position for icon en navigation
-        // mobileIcon.style.position = "fixed";
-        // navigation.style.position = "fixed";
+        line3.style.transform = "rotate(-45deg)";
+        line3.style.top = "-11px";
 
-        navigation.style.height = "600px";
-        navigation.style.paddingTop = "5em";
-
-        navLine1.style.transform = "rotate(-45deg)";
-        navLine1.style.top = "10px";
-        navLine2.style.opacity = "0"; // Remove 2nd line
-        navLine3.style.transform = "rotate(45deg)";
-        navLine3.style.bottom = "10px";
-        scrollIcon.style.visibility = "hidden";
-
-        check = false;
-
+        nav.style.left = "0";
+        nav.style.opacity = "1";
     } else {
+        status = true;
 
-        // Removing fixed position from icon en navigation
-        // mobileIcon.style.position = "absolute";
-        // navigation.style.position = "absolute";
+        overlay.style.opacity = "0";
+        overlay.style.visibility = "hidden";
 
-        navigation.style.height = "0";
-        navigation.style.paddingTop = "0";
+        line1.style.transform = "rotate(0deg)";
+        line1.style.top = "0";
 
-        navLine1.style.transform = "rotate(0deg)";
-        navLine1.style.top = "0px";
-        navLine2.style.opacity = "1"; // Show 2nd line
-        navLine3.style.transform = "rotate(0deg)";
-        navLine3.style.bottom = "0px";
+        line2.style.opacity = "1";
 
-        scrollIcon.style.visibility = "visible";
+        line3.style.transform = "rotate(0deg)";
+        line3.style.top = "0";
 
-        check = true;
-
+        nav.style.left = "-400px";
+        nav.style.opacity = "0";
     }
-
-    // Mobile navigation close onclick links
-    navigationLinks = $('.mobile_navigation_link');
-    navigationLinks.on('click', function() {
-        // Removing fixed position from icon en navigation
-
-        mobileIcon.style.opacity = "0";
-        navigation.style.opacity = "0";
-
-        setTimeout (function() {
-            mobileIcon.style.position = "absolute";
-            navigation.style.position = "absolute";
-
-            navigation.style.height = "0";
-            navigation.style.paddingTop = "0";
-
-            navLine1.style.transform = "rotate(0deg)";
-            navLine1.style.top = "0px";
-            navLine2.style.opacity = "1"; // Show 2nd line
-            navLine3.style.transform = "rotate(0deg)";
-            navLine3.style.bottom = "0px";
-        }, 200);
-
-        setTimeout(function() {
-            mobileIcon.style.opacity = "1";
-            navigation.style.opacity = "1";
-        }, 450);
-
-
-        check = true;
-    });
-
 });

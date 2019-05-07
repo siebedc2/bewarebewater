@@ -12,6 +12,7 @@
         <div id="menu_line_2" class="dropdown_menu_line"></div>
         <div id="menu_line_3" class="dropdown_menu_line"></div>
     </div>
+     
     <!-- Mobile Navigation -->
     <nav class="mobile_navigation" id="mobileNavigation">
         <a class="mobile_navigation_link" id="navLink1" href="#">Home</a>

@@ -44,6 +44,12 @@ $profile = $statement->fetch(PDO::FETCH_ASSOC);
 </head>
 
 <body>
+    <div class="overlay"></div>
+
+    <header>
+        <?php include("nav.inc.php");?>
+    </header>
+
     <!-- SHOW data from DB -->
     <div class="profile">
         <h2>Profile</h2>
@@ -53,8 +59,6 @@ $profile = $statement->fetch(PDO::FETCH_ASSOC);
             <div class="backimg"></div>
        </div>
 
-        
-
         <!-- echo name  -->
         <h3><?php echo $profile['firstname'] . " " . $profile['lastname']; ?></h3>
 
@@ -63,6 +67,8 @@ $profile = $statement->fetch(PDO::FETCH_ASSOC);
     </div>
 
     <a href="#" class="btn btnSecondary">Familie</a>
+
+    <script src="js/script.js"></script>
 
 </body>
 
