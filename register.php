@@ -6,12 +6,11 @@
         //Check if register fields are not empty strings
         if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['passwordConfirm']) ){
 
-            //$firstname = htmlspecialchars($_POST['firstname']);
-           // $lastname = htmlspecialchars($_POST['lastname']);
-            //$username = htmlspecialchars($_POST['username']);
-            $email = htmlspecialchars($_POST['email']);
-            $password = htmlspecialchars($_POST['password']);
-            $passwordConfirm = htmlspecialchars($_POST['passwordConfirm']);
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $passwordConfirm = $_POST['passwordConfirm'];
 
             //Check if firstname is not longer than 30chars
             //if( User::maxLength($firstname, 30)){
@@ -71,9 +70,8 @@
                 //Start new user obj, set properties and call the register function
                 $user = new User();
 
-                //$user->setFirstname($firstname);
-                //$user->setLastname($lastname);
-                //$user->setUsername($username);
+                $user->setFirstname($firstname);
+                $user->setLastname($lastname);
                 $user->setEmail($email);
                 $user->setPassword($password);
 
@@ -129,6 +127,16 @@
 
         <div class="formInput">
             <div class="formField">
+                <label for="firstname">Firstname</label>
+                <input type="text" id="firstname" name="firstname">
+            </div>
+
+            <div class="formField">
+                <label for="lastname">Lastname</label>
+                <input type="text" id="lastname" name="lastname">
+            </div>
+            
+            <div class="formField">
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email">
             </div>
@@ -142,7 +150,8 @@
             </div>
 
             <div class="formField">
-                <input type="submit" value="Sign up" class="btn btnPrimary">
+                <input type="submit" value="Sign up" 
+                .0+>
             </div>
         </div>
 

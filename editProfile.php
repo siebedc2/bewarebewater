@@ -162,10 +162,6 @@ if (!empty($_POST)) {
         </div>
     <?php endif; ?>
 
-    <fieldset>
-
-        <legend>Personal information</legend>
-
         <div class="formField">
             <label for="image">Select image to upload:</label>
             <input type="file" id="image" name="image">
@@ -179,17 +175,9 @@ if (!empty($_POST)) {
         </div>
 
         <div class="formField">
-            <label for="description">Description</label>
-            <textarea rows="10" cols="30" id="description" name="description"
-                      class="textarea"><?php echo $userProfile['description']; ?></textarea>
-        </div>
-
-        <div class="formField">
             <label for="password">Password</label>
             <input type="password" id="password" name="password">
-        </div>
-
-    </fieldset>
+        </div>   
 
     <input type="submit" value="Update profile" name="upload" class="btn btnPrimary">
 

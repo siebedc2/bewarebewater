@@ -132,10 +132,9 @@ class User{
         try{
             $pdo = Db::getConnection();
             
-            $statement = $pdo->prepare("insert into user (email, password) values (:email,:password)");
-            //$statement->bindParam(":firstname", $this->firstname);
-            //$statement->bindParam(":lastname", $this->lastname);
-            //$statement->bindParam(':username', $this->username);
+            $statement = $pdo->prepare("insert into user (firstname, lastname, email, password) values (:firstname, :lastname, :email, :password)");
+            $statement->bindParam(":firstname", $this->firstname);
+            $statement->bindParam(":lastname", $this->lastname);
             $statement->bindParam(":email", $this->email);
             $statement->bindParam(":password", $hash);
             $result = $statement->execute();
@@ -150,6 +149,7 @@ class User{
             fclose($file);
         }
     }
+
     /*
     * Returns true if length of a string is longer than given allowedLength
     */
@@ -162,6 +162,7 @@ class User{
             return false;
         }
     }
+
     /*
     * Returns true if length of a string is shorter than given allowedLength
     */
@@ -174,6 +175,7 @@ class User{
             return false;
         }
     }
+
     /*
     * Find a user based on email addres
     */
@@ -184,6 +186,7 @@ class User{
         $statement->execute();
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
+
     //Check if a user exists by email address
     public static function isEmailAvailable($email){
         $result = self::findByEmail($email);
@@ -194,6 +197,7 @@ class User{
             return false;
         }
     }
+
     /*
     * Find a user based on username
     */
@@ -204,6 +208,7 @@ class User{
         $statement->execute();
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
+
     //Check if a user exists by username
     public static function isUsernameAvailable($username){
         $result = self::findByUsername($username);
@@ -214,6 +219,7 @@ class User{
             return false;
         }
     }
+
     public static function getUserId(){
         //Get email of loggedin user via session
         $sessionEmail = $_SESSION['email'];
