@@ -1,7 +1,7 @@
 <div class="nav">
     <nav class="navigation">
-        <a class="navigation_link" href="index.html">Home</a>
-        <a class="navigation_link" href="#">Apparaten</a>
+        <a class="navigation_link" href="index.php">Home</a>
+        <a class="navigation_link" href="devices.php">Apparaten</a>
         <a class="navigation_link" href="profile.php">Profiel</a>
         <a class="navigation_link" href="#">Instellingen</a>
         <a class="navigation_link" href="logout.php">Logout</a>
@@ -23,9 +23,9 @@
 
         <nav>
             <a class="mobile_navigation_link" id="navLink1" href="index.php">Home</a>
-            <a class="mobile_navigation_link" id="navLink2" href="#">Apparaten</a>
+            <a class="mobile_navigation_link" id="navLink2" href="devices.php">Apparaten</a>
             <a class="mobile_navigation_link" id="navLink3" href="profile.php">Profiel</a>
-            <a class="mobile_navigation_link" id="navLink4" href="#">Instellingen</a>
+            <a class="mobile_navigation_link" id="navLink4" href="settings.php">Instellingen</a>
             <a class="mobile_navigation_link" id="navLink5" href="logout.php">Logout</a>
         </nav>
 
