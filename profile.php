@@ -66,7 +66,7 @@ $profile = $statement->fetch(PDO::FETCH_ASSOC);
 
     </div>
 
-    <a href="#" class="btn btnSecondary">Familie</a>
+    <a href="family.php" class="btn btnSecondary">Familie</a>
 
     <script src="js/script.js"></script>
 

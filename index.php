@@ -22,13 +22,12 @@
         </div>
         <div class="dashboardDiv" id="ranking">
             <h2>Grootste verbruikers</h2>
-                <p class="rankName">Toilet <span class="rankUsage">50L</span></p>
-                <p class="rankName">Toilet 2 <span class="rankUsage">40L</span></p>
-                <p class="rankName">Douche <span class="rankUsage">30L</span></p>
-                <p class="rankName">Bad <span class="rankUsage">25L</span></p>
-                <p class="rankName">Afwasmachine <span class="rankUsage">20L</span></p>
-                <p class="rankName">Wasmachine <span class="rankUsage">20L</span></p>
-            
+            <p class="rankName">Toilet <span class="rankUsage">50L</span></p>
+            <p class="rankName">Toilet 2 <span class="rankUsage">40L</span></p>
+            <p class="rankName">Douche <span class="rankUsage">30L</span></p>
+            <p class="rankName">Bad <span class="rankUsage">25L</span></p>
+            <p class="rankName">Afwasmachine <span class="rankUsage">20L</span></p>
+            <p class="rankName">Wasmachine <span class="rankUsage">20L</span></p>
         </div>
         <div class="dashboardDiv" id="pay">
             <h2>Te betalen</h2>

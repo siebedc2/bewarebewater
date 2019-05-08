@@ -14,11 +14,20 @@
     </div>
      
     <!-- Mobile Navigation -->
-    <nav class="mobile_navigation" id="mobileNavigation">
-        <a class="mobile_navigation_link" id="navLink1" href="#">Home</a>
-        <a class="mobile_navigation_link" id="navLink2" href="#">Apparaten</a>
-        <a class="mobile_navigation_link" id="navLink3" href="#">Profiel</a>
-        <a class="mobile_navigation_link" id="navLink4" href="#">Instellingen</a>
-    </nav>
+    <div class="mobile_navigation" id="mobileNavigation">
+        <div class="profileImg">
+            <img src="images/profilePictures/profile.jpg" alt="Profile image">
+            <div class="backimg"></div>
+        </div>
+
+        <nav>
+            <a class="mobile_navigation_link" id="navLink1" href="index.php">Home</a>
+            <a class="mobile_navigation_link" id="navLink2" href="#">Apparaten</a>
+            <a class="mobile_navigation_link" id="navLink3" href="#">Profiel</a>
+            <a class="mobile_navigation_link" id="navLink4" href="#">Instellingen</a>
+            <a class="mobile_navigation_link" id="navLink5" href="logout.php">Logout</a>
+        </nav>
+
+    </div>
 </div>
 

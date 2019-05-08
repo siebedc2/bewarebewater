@@ -91,10 +91,10 @@ form .redirectLink {
 }
 
 .dropdown_menu {
-    padding: 14.5px 0;
-    margin-left: 1em;
+    padding: 5px 0;
+    margin-left: 2em;
     height: 50px;
-    width: 50px;
+    width: 30px;
     z-index: 600;
     position: absolute;
     box-sizing: border-box;
@@ -118,7 +118,7 @@ form .redirectLink {
     position: absolute;
     overflow: hidden;
     box-sizing: border-box;
-    padding: 100px 1em;
+    padding: 30px 1em;
     margin: 0;
     top: 0;
     left: -400px;
@@ -145,10 +145,10 @@ form .redirectLink {
 .mobile_navigation a {
     display: block;
     text-decoration: none;
-    text-transform: uppercase;
     font-weight: bold;
     padding: .4em 0;
-    color: black;
+    margin-left: 30px;
+    color: #707070;
     text-align: left;
     font-size: 1.2em;
     -webkit-transition: all .3s;
@@ -158,37 +158,14 @@ form .redirectLink {
     transition: all .3s;
 }
 
+.mobile_navigation a:last-child {
+    margin-top: 150px;
+}
+
 .mobile_navigation a:hover {
     color: dodgerblue;
-    transform: translateY(-5px);
+    /*transform: translateY(-5px);*/
 }
-
-.dashboard .top, .dashboard .left1, .dashboard .left2, .dashboard .right {
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.dashboard .top {
-    display: block;
-    width: 80%;
-    margin: 0 auto;
-    height: 110px;
-}
-
-.dashboard .bottom {
-    display: flex;
-}
-
-.dashboard .left1, .dashboard .left2 {
-    width: 138px;
-    height: 200px;
-}
-
-.dashboard .right {
-    height: 404px;
-    width: 140px;
-}
-
 
 .profile h3 {
     text-align: center;
@@ -202,12 +179,12 @@ form .redirectLink {
     height: 300px;
 }
 
-.profile img {
+.profileImg img {
     z-index: 2;
     width: 170px;
     margin-top: 76px;
     position: relative;
-    border-radius: 100%;
+    border-radius: 50%;
 }
 
 .backimg {
@@ -221,5 +198,12 @@ form .redirectLink {
     position: relative;
     top: -190px;
     left: -10px;
-        
 }
+
+/*.mobile_navigation .profileImg {
+    margin: 0;
+
+}*/
+
+
+
