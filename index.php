@@ -2,14 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Poppins|Ubuntu" rel="stylesheet"> 
+
+    <link rel="icon" href="images/logo.png">
+    
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
-    <title>Dashboard - Be ware, Be water</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <title>Dashboard</title>
 </head>
 <body>
+    
+    <div class="overlay"></div>
+
+    <header>
+        <?php include("nav.inc.php");?>
+    </header>
 
     <div id="dashboardContainer">
         <div class="dashboardDiv" id="usage">
@@ -34,5 +44,8 @@
             <h2>€99</h2>
         </div>
     </div>
+
+
+    <script src="js/script.js"></script>
 </body>
 </html>
