@@ -21,20 +21,21 @@ body{
     border: 1px solid white;
     border-radius: 10px;
     box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 2%;
+    margin-bottom: 4%;
 }
 
 #usage{
     grid-column: 1/ span 2;
     width: 100%;
     text-align: center;
+    margin-bottom: 2%;
 }
 
 #currentUsage, #graph{
     display: inline-block;
     width: 45%;
     box-sizing: border-box;
-    padding: 3%;
+    
 }
 
 #currentUsage{
@@ -63,6 +64,7 @@ body{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
+    margin-right: 5%;
 }
 
 #add h2{
