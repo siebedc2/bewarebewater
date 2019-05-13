@@ -9,11 +9,11 @@
     <link rel="icon" href="images/logo.png">
     
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dashboard.css">
+    
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <title>Dashboard</title>
 </head>
-<body>
+<body class="background">
     
     <div class="overlay"></div>
 
