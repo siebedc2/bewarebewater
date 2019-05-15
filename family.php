@@ -40,7 +40,7 @@
             <div class="backimg"></div>
        </div>
 
-       <?php //foreach ($results as $result): ?>
+       <?php foreach ($results as $result): ?>
             <!-- Echo the profile picture of the person-->
             <!--<div class="familyMember">
                 <div class="profileImg">
@@ -49,9 +49,9 @@
                 </div>-->
 
                 <!-- Echo firstname and lastname of member -->
-                <p><?php // echo $result['firstname']?></p>
+                <p><?php  echo $result['firstname']; ?></p>
             </div>
-        <?php //endforeach; ?>
+        <?php endforeach; ?>
 
       
     </div>
