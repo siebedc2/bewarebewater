@@ -13,8 +13,8 @@ require_once("bootstrap/bootstrap.php");
 $conn = Db::getConnection();
 
 // get email from current user
-// $_SESSION['email']
-//$email = $_SESSION['email'];
+$_SESSION['email'];
+$email = $_SESSION['email'];
 
 
 // GET data from DB
