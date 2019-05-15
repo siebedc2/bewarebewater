@@ -2,6 +2,7 @@
     
 
 
+
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -32,10 +33,17 @@
             <img src="images/profilePictures/profile.jpg" alt="Profile image">
             <div class="backimg"></div>
        </div>
+
+       <?php //foreach ($results as $result): ?>
+            <div class="user">
+                <!--<p><?php echo $result['firstname'] . " " . $result['lastname']; ?></p>-->
+            </div>
+        <?php //endforeach; ?>
+
       
     </div>
 
-    <a href="#" class="btn btnSecondary">Toevoegen</a>
+    <a href="addFamilyMember.php" class="btn btnSecondary">Toevoegen</a>
 
     <script src="js/script.js"></script>
 
