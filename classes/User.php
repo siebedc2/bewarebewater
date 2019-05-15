@@ -243,9 +243,10 @@ class User{
         return $results;
     }
 
-    public static function getAllusers() {
+    public static function getAllusers($userId) {
         $conn = Db::getConnection();
-        $statement = $conn->prepare("select id, firstname, lastname from user");
+        $statement = $conn->prepare("select id, firstname, lastname from user where not id = :userId");
+        $statement->bindParam(":userId", $userId);
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $results;
@@ -253,7 +254,8 @@ class User{
 
     public static function getAllMembers($userId) {
         $conn = Db::getConnection();
-        $statement = $conn->prepare("");
+        $statement = $conn->prepare("select user.id, user.firstname, user.lastname from user inner join family on user.id = family.member_id where family.user_id = :userId");
+        $statement->bindParam(":userId", $userId);
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $results;
