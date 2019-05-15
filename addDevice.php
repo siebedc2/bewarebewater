@@ -2,13 +2,14 @@
 
     require_once("bootstrap/bootstrap.php");
 
-    if(!empty($_POST['apparaat']) && !epmty($_POST['kamer'])){
+    if(!empty($_POST['kamer']) && !empty($_POST['apparaat'])){
+        $room = $_POST['kamer'];
+        $device = $_POST['apparaat'];
+
         $userId = User::getUserId();
-        $results = Device::addDevice($userId);
-
+        $results = Device::addDevice($userId, $room, $device);
+        //var_dump($userId);
     }
-
-    
 
 
 
@@ -47,11 +48,13 @@
                 <label for="kamer">Kamer</label>
                 <input type="text" name="kamer">
             </div>
+
+            <input type="submit" value="Submit">
         </form>
 
     </div>
 
-    <a href="addDevice.php" class="btn btnSecondary">Toevoegen</a>
+    
 
     <script src="js/script.js"></script>
     
