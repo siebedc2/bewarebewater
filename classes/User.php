@@ -232,4 +232,25 @@ class User{
         $user_id = $user_id['id'];
         return $user_id;
     }
+
+
+
+
+    public static function searchMember($name) {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("select id, firstname, lastname from user where firstname like '%" . $name . "%' or lastname like '%" . $name . "%'");
+        $statement->execute();
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    public static function getAllusers() {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("select id, firstname, lastname from user");
+        $statement->execute();
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+
 }
