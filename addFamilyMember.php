@@ -7,7 +7,8 @@
         $results = User::searchMember($name);
     } 
 
-    $results = User::getAllusers();
+    $userId = User::getUserId();
+    $results = User::getAllusers($userId);
 
 
 ?><!DOCTYPE html>
@@ -20,7 +21,7 @@
     <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <title>Toevoegen familie</title>
+    <title>Toevoegen familielid</title>
 </head>
 <body>
 
@@ -32,6 +33,7 @@
 
     <!-- SHOW data from DB -->
     <div class="family">
+        
         <h2>Toevoegen familie</h2>
 
         <form action="" method="GET">
@@ -43,15 +45,14 @@
         <?php foreach ($results as $result): ?>
             <div class="user">
                 <p><?php echo $result['firstname'] . " " . $result['lastname']; ?></p>
-                
+                <a class="addBtn" data-id="<?php echo $result['id'] ?>" href="#">Toevoegen</a>                
             </div>
-
         <?php endforeach; ?>
 
-      
     </div>
     
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
+    <script src="js/addMember.js"></script>
 </body>
 </html>
