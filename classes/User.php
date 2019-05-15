@@ -1,5 +1,4 @@
 <?php
-require_once("Db.php");
 require_once("Security.php");
 class User{
     private $username;
@@ -247,6 +246,23 @@ class User{
     public static function getAllusers() {
         $conn = Db::getConnection();
         $statement = $conn->prepare("select id, firstname, lastname from user");
+        $statement->execute();
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    public static function getAllMembers($userId) {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("");
+        $statement->execute();
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    }
+
+    public static function getAllDevices($userId) {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("select * from device where user_id = :userId");
+        $statement->bindParam(":userId", $userId);
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $results;
