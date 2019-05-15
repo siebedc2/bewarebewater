@@ -26,8 +26,8 @@ h2 {
     margin: 45px auto;
 }
 
-.formInput {
-    width: 70%;
+/*.formInput {
+    width: 100%;
     margin-top: 1.5em;
     text-align: left;
     margin-left: auto;
@@ -42,7 +42,7 @@ h2 {
     display: block;
     padding-bottom: 0.5em;
     text-align: left;
-}
+}*/
 
 .formError {
     background-color: #fff;
@@ -53,7 +53,7 @@ h2 {
 }
 
 input[type=text], input[type=password] {
-    width: 100%;
+    width: 80%;
     height: 40px;
     background-color:#fff;
     border: none;
@@ -62,6 +62,8 @@ input[type=text], input[type=password] {
     color: #000;
     padding-left: 0.5em;
     font-size: 1em;
+    display: block;
+    margin: 0 auto;
 }
 
 .btn {
@@ -326,5 +328,9 @@ form .redirectLink {
     transform: translateY(-50%);
 }
 
-
+.family .user {
+    width: 80%;
+    display: block;
+    margin: 30px auto;
+}
 
