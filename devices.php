@@ -1,6 +1,10 @@
 <?php
     
+    require_once("bootstrap/bootstrap.php");
 
+    $userId = User::getUserId();
+
+    $results = User::getAllDevices($userId);
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -14,7 +18,7 @@
     <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <title>Familie</title>
+    <title>Apparaten</title>
 </head>
 
 <body>
@@ -28,11 +32,16 @@
     <div class="devices">
         <h2>Apparaten</h2>
 
-        
-      
+        <?php foreach($results as $result): ?>
+            <div class="device">
+                <p><?php echo $result['name']; ?></p>
+                <p><?php echo $result['amount']; ?></p>
+            </div>       
+        <?php endforeach; ?>
+
     </div>
 
-    <a href="#" class="btn btnSecondary">Toevoegen</a>
+    <a href="addDevice.php" class="btn btnSecondary">Toevoegen</a>
 
     <script src="js/script.js"></script>
 
