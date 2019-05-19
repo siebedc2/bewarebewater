@@ -42,7 +42,7 @@
         <?php foreach($results as $result): ?>
             <div class="device">
                 <p><?php echo $result['name']; ?></p>
-                <p><?php echo $result['amount']; ?></p>
+                <p><?php echo $result['amount'] . ' L'; ?></p>
             </div>       
         <?php endforeach; ?>
 

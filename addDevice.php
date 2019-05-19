@@ -52,7 +52,7 @@
                     <input type="text" name="kamer">
                 </div>
 
-                <input type="submit" value="Submit" class="btn btnPrimary">
+                <input type="submit" value="Toevoegen" class="btn btnPrimary">
             </div>
         </form>
 
