@@ -38,22 +38,24 @@
         <h2>Instellingen</h2>
 
         <form action="" method="POST">
-            <div class="formField">
-                <label for="woning">Soort woning</label>
-                <input type="text" name="woning" value="Typ hier...">
-            </div>
+            <div class="formInput">
+                <div class="formField">
+                    <label for="woning">Soort woning</label>
+                    <input type="text" name="woning" value="Typ hier...">
+                </div>
 
-            <div class="formField">
-                <label for="woonplaats">Woonplaats</label>
-                <input type="text" name="woonplaats" value="Typ hier...">
-            </div>
+                <div class="formField">
+                    <label for="woonplaats">Woonplaats</label>
+                    <input type="text" name="woonplaats" value="Typ hier...">
+                </div>
 
-            <div class="formField">
-                <label for="watermaatschappij">Watermaathschappij</label>
-                <input type="text" name="watermaatschappij" value="Typ hier...">
-            </div>
+                <div class="formField">
+                    <label for="watermaatschappij">Watermaathschappij</label>
+                    <input type="text" name="watermaatschappij" value="Typ hier...">
+                </div>
 
-            <input type="submit" value="Opslaan" name="upload" class="btn btnSecondary">
+                <input type="submit" value="Opslaan" name="upload" class="btn btnPrimary">
+            </div>
         </form>
       
     </div>

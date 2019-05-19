@@ -48,8 +48,10 @@
         <h2>Toevoegen familie</h2>
 
         <form action="" method="GET">
-            <div class="searchBar" id="search">
-                <input type="text" id="name" name="name">
+            <div class="formInput">
+                <div class="searchBar" id="search">
+                    <input type="text" id="name" name="name">
+                </div>
             </div>
         </form>       
 

@@ -41,17 +41,19 @@
         <h2>Apparaat toevoegen</h2>
 
         <form action="" method="POST">
-            <div class="formField">
-                <label for="apparaat">Apparaat</label>
-                <input type="text" name="apparaat">
-            </div>
+            <div class="formInput">
+                <div class="formField">
+                    <label for="apparaat">Apparaat</label>
+                    <input type="text" name="apparaat">
+                </div>
 
-            <div class="formField">
-                <label for="kamer">Kamer</label>
-                <input type="text" name="kamer">
-            </div>
+                <div class="formField">
+                    <label for="kamer">Kamer</label>
+                    <input type="text" name="kamer">
+                </div>
 
-            <input type="submit" value="Submit">
+                <input type="submit" value="Submit" class="btn btnPrimary">
+            </div>
         </form>
 
     </div>
