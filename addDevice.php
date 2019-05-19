@@ -1,18 +1,20 @@
 <?php 
 
+    // require all classes
     require_once("bootstrap/bootstrap.php");
 
+    // if the fields are not empty
     if(!empty($_POST['kamer']) && !empty($_POST['apparaat'])){
+        // get value of the fields        
         $room = $_POST['kamer'];
         $device = $_POST['apparaat'];
 
+        // get user_id from the user that is logged in
         $userId = User::getUserId();
+
+        // insert device in the database
         $results = Device::addDevice($userId, $room, $device);
-        //var_dump($userId);
     }
-
-
-
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -53,8 +55,6 @@
         </form>
 
     </div>
-
-    
 
     <script src="js/script.js"></script>
     

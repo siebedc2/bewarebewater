@@ -1,11 +1,15 @@
 <?php
     
+    // require all classes
     require_once("bootstrap/bootstrap.php");
 
+    // logged in a user?
+    User::userLoggedIn();
+
+    // get user_id from the user that is logged in
     $userId = User::getUserId();
 
-    //var_dump($userId);
-
+    // get all familymembers of the user
     $results = User::getAllMembers($userId);
 
 

@@ -1,14 +1,25 @@
 <?php 
 
+    // require all classes
     require_once("bootstrap/bootstrap.php");
 
+    // logged in a user?
+    User::userLoggedIn();
+
+    // if the fields are not empty
     if (!empty($_GET['name'])) {
+        // get value of the fields
         $name = $_GET['name'];
+
+        // search the user in the db
         $results = User::searchMember($name);
     } 
 
-    $userId = User::getUserId();
-    $results = User::getAllusers($userId);
+    else {
+        $userId = User::getUserId();
+        $results = User::getAllusers($userId);
+    }
+    
 
 
 ?><!DOCTYPE html>

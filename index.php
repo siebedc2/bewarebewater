@@ -1,4 +1,18 @@
-<!DOCTYPE html>
+<?php 
+
+    // require all classes
+    require_once("bootstrap/bootstrap.php");
+
+    // logged in a user?
+    User::userLoggedIn();
+
+    // get user_id from the user that is logged in
+    $userId = User::getUserId();
+
+    
+
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,12 +21,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="icon" href="images/logo.png">
-    
     <link rel="stylesheet" href="css/style.css">
-    
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <title>Dashboard</title>
 </head>
+
 <body class="background">
     
     <div class="overlay"></div>

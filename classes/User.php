@@ -233,7 +233,7 @@ class User{
     }
 
 
-
+    // check if the user is logged in
     public static function userLoggedIn() {
         if( isset($_SESSION['email']) ){
             //User is logged in, no redirect needed!
@@ -244,6 +244,7 @@ class User{
         }
     }
 
+    // search members in the db
     public static function searchMember($name) {
         $conn = Db::getConnection();
         $statement = $conn->prepare("select id, firstname, lastname from user where firstname like '%" . $name . "%' or lastname like '%" . $name . "%'");
@@ -252,6 +253,7 @@ class User{
         return $results;
     }
 
+    // get all users in the database
     public static function getAllusers($userId) {
         $conn = Db::getConnection();
         $statement = $conn->prepare("select id, firstname, lastname from user where not id = :userId");
@@ -261,6 +263,7 @@ class User{
         return $results;
     }
 
+    // get all family members of the user that is logged in
     public static function getAllMembers($userId) {
         $conn = Db::getConnection();
         $statement = $conn->prepare("select user.id, user.firstname, user.lastname from user inner join family on user.id = family.member_id where family.user_id = :userId");
@@ -270,6 +273,7 @@ class User{
         return $results;
     }
 
+    // get all devices of the user that is logged in
     public static function getAllDevices($userId) {
         $conn = Db::getConnection();
         $statement = $conn->prepare("select * from device where user_id = :userId");
@@ -279,6 +283,7 @@ class User{
         return $results;
     }
 
+    // get all data of the user that is logged in
     public static function getUserData($userId) {
         $conn = Db::getConnection();
         $statement = $conn->prepare("select * from user where id = :user_id");
@@ -287,6 +292,5 @@ class User{
         $profile = $statement->fetch(PDO::FETCH_ASSOC);
         return $profile;
     }
-
 
 }
