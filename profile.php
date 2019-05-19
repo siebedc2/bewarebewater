@@ -1,31 +1,17 @@
 <?php
 
-require_once("bootstrap/bootstrap.php");
+    // require all classes
+    require_once("bootstrap/bootstrap.php");
 
-//Check if user session is active (Is user logged in?)
-/*if( isset($_SESSION['email']) ){
-    //User is logged in, no redirect needed!
-}else{
-    //User is not logged in, redirect to login.php!
-   header("location: login.php");
-}*/
+    // logged in a user?
+    User::userLoggedIn();
 
-$conn = Db::getConnection();
+    // get user_id from the user that is logged in
+    $userId = User::getUserId();
 
-// get email from current user
-$_SESSION['email'];
-$email = $_SESSION['email'];
-
-
-// GET data from DB
-$statement = $conn->prepare("select * from user where email = :email");
-$statement->bindParam(":email", $email);
-$statement->execute();
-$profile = $statement->fetch(PDO::FETCH_ASSOC);
-// Edit button click
-// Pop-up: ask old password
-// Go to editProfile.php
-
+    // get all devices of the logged in user
+    $profile = User::getUserData($userId);
+    
 
 ?>
 <!DOCTYPE html>

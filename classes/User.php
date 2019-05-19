@@ -234,6 +234,15 @@ class User{
 
 
 
+    public static function userLoggedIn() {
+        if( isset($_SESSION['email']) ){
+            //User is logged in, no redirect needed!
+        }
+        else{
+            //User is not logged in, redirect to login.php!
+            header("location: login.php");
+        }
+    }
 
     public static function searchMember($name) {
         $conn = Db::getConnection();
@@ -268,6 +277,15 @@ class User{
         $statement->execute();
         $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $results;
+    }
+
+    public static function getUserData($userId) {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("select * from user where id = :user_id");
+        $statement->bindParam(":user_id", $userId);
+        $statement->execute();
+        $profile = $statement->fetch(PDO::FETCH_ASSOC);
+        return $profile;
     }
 
 
