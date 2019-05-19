@@ -1,7 +1,9 @@
 <?php
-require_once("Security.php");
+
+    // require the security class for a hashed password
+    require_once("Security.php");
+
 class User{
-    private $username;
     private $email;
     private $password;
     private $passwordConfirmation;
@@ -9,20 +11,7 @@ class User{
     private $lastname;
     private $image;
     private $description;
-    /**
-     * @return username
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
-    /**
-     * @param $username
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-    }
+    
     /**
      * @return email
      */
@@ -30,13 +19,28 @@ class User{
     {
         return $this->email;
     }
+
     /**
      * @param $email
      */
     public function setEmail($email)
     {
+        //Check if not empty
+        if( empty($email) ){
+            throw new Exception("Email cannot be empty.");
+        }
+        //Check if email is legit
+        if( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+            throw new Exception("Please use a valid email address!");
+        }
+        //Check if email is not in our DB yet
+        if( !User::isEmailAvailable($email) ){
+            throw new Exception("A user with this email address is already registered.");
+        }
         $this->email = $email;
+        return $this;
     }
+
     /**
      * @return password
      */
@@ -44,13 +48,25 @@ class User{
     {
         return $this->password;
     }
+
     /**
      * @param $password
      */
     public function setPassword($password)
     {
+        //Check if not empty
+        if( empty($password) ){
+            throw new Exception("Password cannot be empty.");
+        }
+        //Check if password has minimum length of 8 chars
+        if( User::minLength($password, 8)){
+            throw new Exception("Password must be minimum 8 chars long.");
+        }
+        
         $this->password = $password;
+        return $this;
     }
+
     /**
      * @return passwordConfirmation
      */
@@ -63,8 +79,19 @@ class User{
      */
     public function setPasswordConfirmation($passwordConfirmation)
     {
+        //Check if not empty
+        if( empty($passwordConfirmation) ){
+            throw new Exception("Password Confirmation cannot be empty.");
+        }
+        //Do passwords equal?
+        if( $this->getPassword() !== $passwordConfirmation){
+            //Passwords do not equal, throw exception
+            throw new Exception("Password fields are not equal, please enter them again");
+        }
         $this->passwordConfirmation = $passwordConfirmation;
+        return $this;
     }
+    
     /**
      * @return firstname
      */
@@ -77,8 +104,18 @@ class User{
      */
     public function setFirstname($firstname)
     {
+        //Check if not empty
+        if( empty($firstname) ){
+            throw new Exception("Firstname cannot be empty.");
+        }
+        //Check if firstname is not longer than 30chars
+        if( User::maxLength($firstname, 30)){
+            throw new Exception("Firstname cannot be longer than 30 characters.");
+        }
         $this->firstname = $firstname;
+        return $this;
     }
+
     /**
      * @return lastname
      */
@@ -91,8 +128,18 @@ class User{
      */
     public function setLastname($lastname)
     {
+        //Check if not empty
+        if( empty($lastname) ){
+            throw new Exception("Lastname cannot be empty.");
+        }
+        //Check if lastname is not longer than 30chars
+        if( User::maxLength($lastname, 30)){
+            throw new Exception("Lastname cannot be longer than 30 characters.");
+        }
         $this->lastname = $lastname;
+        return $this;
     }
+
     /**
      * @return image
      */
@@ -107,6 +154,7 @@ class User{
     {
         $this->image = $image;
     }
+
     /**
      * @return description (bio)
      */
@@ -121,6 +169,7 @@ class User{
     {
         $this->description = $description;
     }
+
     /**
      * @return boolean - true if successful, false if unsuccessful
      */
@@ -197,28 +246,6 @@ class User{
         }
     }
 
-    /*
-    * Find a user based on username
-    */
-    public static function findByUsername($username){
-        $conn = Db::getConnection();
-        $statement = $conn->prepare("select * from user where username = :username limit 1");
-        $statement->bindParam(":username", $username);
-        $statement->execute();
-        return $statement->fetch(PDO::FETCH_ASSOC);
-    }
-
-    //Check if a user exists by username
-    public static function isUsernameAvailable($username){
-        $result = self::findByUsername($username);
-        // PDO returns false if no records are found so let's check for that
-        if($result == false){
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public static function getUserId(){
         //Get email of loggedin user via session
         $sessionEmail = $_SESSION['email'];
@@ -232,16 +259,10 @@ class User{
         return $user_id;
     }
 
-
     // check if the user is logged in
     public static function userLoggedIn() {
-        if( isset($_SESSION['email']) ){
-            //User is logged in, no redirect needed!
-        }
-        else{
-            //User is not logged in, redirect to login.php!
-            header("location: login.php");
-        }
+        if( isset($_SESSION['email']) ){ /* User is logged in, no redirect needed! */ }
+        else{ /* User is not logged in, redirect to login.php! */ header("location: login.php"); }
     }
 
     // search members in the db
