@@ -32,7 +32,7 @@
     <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <title>Toevoegen familielid</title>
+    <title>Be Ware Be Water - Toevoegen familielid</title>
 </head>
 <body>
 

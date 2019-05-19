@@ -24,7 +24,7 @@
     <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <title>Dashboard</title>
+    <title>Be Ware Be Water - Home</title>
 </head>
 
 <body class="background">
@@ -52,7 +52,7 @@
             <?php foreach($devices as $device): ?>
                 <div class="rankDevice">
                     <p class="rankName"><?php echo $device['name']; ?></p>
-                    <p class="rankUsage"><?php echo $device['amount'] . 'L'; ?></p>
+                    <p class="rankUsage"><?php echo $device['amount'] / 10 . 'L'; ?></p>
                 </div>
             <?php endforeach; ?>       
         </div>

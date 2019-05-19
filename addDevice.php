@@ -27,7 +27,7 @@
     <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <title>Apparaat toevoegen</title>
+    <title>Be Ware Be Water - Apparaat toevoegen</title>
 </head>
 <body>
     <div class="overlay"></div>

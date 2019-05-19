@@ -26,7 +26,7 @@
     <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <title>Profile</title>
+    <title>Be Ware Be Water - Profile</title>
 </head>
 
 <body>
