@@ -11,6 +11,9 @@
 
     // get all devices of the logged in user
     $profile = User::getUserData($userId);
+
+    // get all familymembers of the user
+    $results = User::getAllMembers($userId);
     
 
 ?>
@@ -48,14 +51,28 @@
         <!-- echo name  -->
         <h3><?php echo $profile['firstname'] . " " . $profile['lastname']; ?></h3>
 
-
-
     </div>
 
-    <a href="family.php" class="btn btnSecondary">Familie</a>
+    <div class="familyMembers">
+        <?php foreach ($results as $result): ?>
+            <!-- Echo the profile picture of the person-->
+            <div class="familyMember">
+                <div class="profileImg">
+                    <img src="images/profilePictures/<?php echo $result['avatar'] ?>" alt="Profile image">
+                    <div class="backimg"></div>
+                </div>
+
+                <!-- Echo firstname and lastname of member -->
+                <p class="firstname"><?php echo $result['firstname']; ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    
+
+    <a href="addFamilyMember.php" class="btn btnSecondary">Familielid toevoegen</a>
 
     <script src="js/script.js"></script>
-
 </body>
 
 </html>
