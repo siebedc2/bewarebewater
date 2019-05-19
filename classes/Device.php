@@ -11,4 +11,12 @@
             return $results;
         }
 
+        public static function addAmount($amount, $userId) {
+            $conn = Db::getConnection();
+            $statement = $conn->prepare("update device set amount = :amount where user_id = :user_id");
+            $statement->bindParam(":amount", $amount);
+            $statement->bindParam(":user_id", $userId);
+            $statement->execute();
+        }
+
     }
