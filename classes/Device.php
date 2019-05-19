@@ -19,4 +19,13 @@
             $statement->execute();
         }
 
+        public static function getMostAmout($userId) {
+            $conn = Db::getConnection();
+            $statement = $conn->prepare("select * from device where user_id = :user_id order by amount desc limit 3");
+            $statement->bindParam(":user_id", $userId);
+            $statement->execute();
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        }
+
     }
