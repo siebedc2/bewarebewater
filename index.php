@@ -15,11 +15,18 @@
     // get the amount of familymembers
     $memberAmout = User::getAmountOfFamilyMembers($userId);
 
+    // current usage
+    $currentUsage = User::getCurrentUsage($userId);
+
     // set amount of water for 1 month
     $water_amount = ($memberAmout['count'] + 1) * (99 * 31);
 
     // set prices for the used water
-    $price = ($water_amount / 1000) * 4.3;
+    $price = ($currentUsage['total'] / 1000) * 4.3;
+
+    // compare current usage and total usage
+    User::compareAmounts($currentUsage, $water_amount);
+
 
 
 ?><!DOCTYPE html>
@@ -47,8 +54,10 @@
     <!-- begin of dashboardcontainer -->
     <div id="dashboardContainer">
         <div class="dashboardDiv" id="usage">
-            <h1 id="currentUsage"><?php echo  $water_amount ?><span id="liter">L</span></h1>
-            <img src="images/graph.png" alt="graph" id="graph">
+            <h1 id="currentUsage"><?php echo  $currentUsage['total'] ?><span id="liter">L</span></h1>
+            <h1>/</h1>
+            <h1><?php echo  $water_amount ?><span id="liter">L</span></h1>
+            <!--<img src="images/graph.png" alt="graph" id="graph">-->
         </div>
 
         <div class="dashboardDiv" id="add">

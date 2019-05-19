@@ -355,5 +355,25 @@ class User{
         return $amount;
     }
 
+    public static function getCurrentUsage($userId) {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("select sum(amount) as total from device where user_id = :user_id");
+        $statement->bindParam(":user_id", $userId);
+        $statement->execute();
+        $currentAmount = $statement->fetch(PDO::FETCH_ASSOC);
+        return $currentAmount;
+    }
+
+    public static function compareAmounts($currentUsage, $water_amount) {
+        $usedAmount = intval($currentUsage['total']);
+        $marge = $water_amount - 200;
+
+        if( $usedAmount > $marge) {
+            $message = "Alert! You have almost reached your montly limit! Don not cross it!";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+
+    }
+
 
 }
