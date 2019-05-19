@@ -9,7 +9,7 @@
     // get user_id from the user that is logged in
     $userId = User::getUserId();
 
-    
+
 
 
 ?><!DOCTYPE html>
@@ -34,6 +34,7 @@
         <?php include("nav.inc.php");?>
     </header>
 
+    <!-- begin of dashboardcontainer -->
     <div id="dashboardContainer">
         <div class="dashboardDiv" id="usage">
             <h1 id="currentUsage">100 <span id="liter">L</span></h1>
@@ -47,24 +48,22 @@
             </div>
         </a>
 
-        <!--<a href="devices.php">-->
-            <div class="dashboardDiv" id="ranking">
-                <h2>Grootste verbruikers</h2>
-                <p class="rankName">Toilet <span class="rankUsage">50L</span></p>
-                <p class="rankName">Toilet 2 <span class="rankUsage">40L</span></p>
-                <p class="rankName">Douche <span class="rankUsage">30L</span></p>
-                <p class="rankName">Bad <span class="rankUsage">25L</span></p>
-                <p class="rankName">Afwasmachine <span class="rankUsage">20L</span></p>
-                <p class="rankName">Wasmachine <span class="rankUsage">20L</span></p>
-            </div>
-        <!--</a>-->
+        <div class="dashboardDiv" id="ranking">
+            <h2>Grootste verbruikers</h2>
+            <p class="rankName">Toilet <span class="rankUsage">50L</span></p>
+            <p class="rankName">Toilet 2 <span class="rankUsage">40L</span></p>
+            <p class="rankName">Douche <span class="rankUsage">30L</span></p>
+            <p class="rankName">Bad <span class="rankUsage">25L</span></p>
+            <p class="rankName">Afwasmachine <span class="rankUsage">20L</span></p>
+            <p class="rankName">Wasmachine <span class="rankUsage">20L</span></p>
+        </div>
 
         <div class="dashboardDiv" id="pay">
             <h2>Te betalen</h2>
             <h2>€99</h2>
         </div>
     </div>
-
+    <!-- end of dashboardcontainer-->
 
     <script src="js/script.js"></script>
 </body>
