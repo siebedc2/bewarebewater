@@ -9,7 +9,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 97vh;
+    height: 95.5vh;
 }
 
 h2 {
@@ -24,8 +24,8 @@ h2 {
     margin: 45px auto;
 }
 
-/*.formInput {
-    width: 100%;
+.formInput {
+    width: 80%;
     margin-top: 1.5em;
     text-align: left;
     margin-left: auto;
@@ -40,18 +40,20 @@ h2 {
     display: block;
     padding-bottom: 0.5em;
     text-align: left;
-}*/
+}
 
 .formError {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
     background-color: #fff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 0.5em;
     border-radius: 10px;
-    margin: 15px 50px;
 }
 
 input[type=text], input[type=password] {
-    width: 80%;
+    width: 100%;
     height: 40px;
     background-color:#fff;
     border: none;
@@ -71,7 +73,7 @@ input[type=text], input[type=password] {
     height: 40px;
     border-radius: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-top: 5em;
+    margin-top: 1em;
     text-decoration: none;
 }
 

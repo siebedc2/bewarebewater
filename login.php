@@ -48,7 +48,7 @@
         <?php if (isset($error)): ?>
         <div class="formError">
             <p>
-                Sorry, we can't log you in with that email address and password. Can you try again?
+                Sorry, we can't log you in with that email address and password.
             </p>
         </div>
         <?php endif; ?>
