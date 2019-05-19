@@ -29,7 +29,7 @@
     <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <title>Be Ware Be Water - Profile</title>
+    <title>Be Ware Be Water - Profiel</title>
 </head>
 
 <body>
@@ -41,7 +41,7 @@
 
     <!-- SHOW data from DB -->
     <div class="profile">
-        <h2>Profile</h2>
+        <h2>Profiel</h2>
 
         <div class="profileImg">
             <img src="images/profilePictures/profile.jpg" alt="Profile image">

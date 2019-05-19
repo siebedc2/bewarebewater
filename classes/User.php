@@ -11,7 +11,7 @@ class User{
     private $lastname;
     private $image;
     private $description;
-    
+     
     /**
      * @return email
      */
@@ -330,5 +330,20 @@ class User{
         $profile = $statement->fetch(PDO::FETCH_ASSOC);
         return $profile;
     }
+
+    // get the settings of the user
+    public static function getSettings($userId) {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("select * from user where id = :user_id");
+        $statement->bindParam(":user_id", $userId);
+        $statement->execute();
+        $settings = $statement->fetch(PDO::FETCH_ASSOC);
+        return $settings;
+    }
+
+    public static function doChangeSettings($houseType, $location, $waterCompany) {
+        
+    }
+
 
 }

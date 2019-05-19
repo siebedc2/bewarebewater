@@ -92,6 +92,11 @@ input[type=text], input[type=password] {
     padding: 10px 0px;
     margin: 0 auto;
     margin-top: 10px;
+    position: absolute;
+    bottom: 30px;
+    position: absolute;
+    left: 50%;
+    margin-left: -143px
 }
 
 form .redirectLink {
@@ -247,9 +252,11 @@ form .redirectLink {
 }
 
 .family .user {
+    display: flex;
     width: 80%;
-    display: block;
     margin: 30px auto;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .devices .device {
@@ -305,4 +312,11 @@ form .redirectLink {
     margin-top: 5px;
     padding-bottom: 5px;
     font-weight: bold;
+}
+
+.dataField {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 50px;
 }

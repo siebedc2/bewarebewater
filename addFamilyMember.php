@@ -50,7 +50,7 @@
         <form action="" method="GET">
             <div class="formInput">
                 <div class="searchBar" id="search">
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name" placeholder= "Zoeken...">
                 </div>
             </div>
         </form>       

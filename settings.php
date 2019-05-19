@@ -9,6 +9,8 @@
     // get user_id from the user that is logged in
     $userId = User::getUserId();
     
+    // get the settings of the user
+    $settings = User::getSettings($userId);
 
 
 ?><!DOCTYPE html>
@@ -37,26 +39,26 @@
     <div class="settings">
         <h2>Instellingen</h2>
 
-        <form action="" method="POST">
-            <div class="formInput">
-                <div class="formField">
-                    <label for="woning">Soort woning</label>
-                    <input type="text" name="woning" value="Typ hier...">
-                </div>
-
-                <div class="formField">
-                    <label for="woonplaats">Woonplaats</label>
-                    <input type="text" name="woonplaats" value="Typ hier...">
-                </div>
-
-                <div class="formField">
-                    <label for="watermaatschappij">Watermaathschappij</label>
-                    <input type="text" name="watermaatschappij" value="Typ hier...">
-                </div>
-
-                <input type="submit" value="Opslaan" name="upload" class="btn btnPrimary">
+        
+        <div class="data">
+            <div class="dataField">
+                <p>Soort woning</p>
+                <p><?php echo $settings['house_type']; ?></p>
             </div>
-        </form>
+
+            <div class="dataField">
+                <p>Woonplaats</p>
+                <p><?php echo $settings['location']; ?></p>
+            </div>
+
+            <div class="dataField">
+                <p>Watermaatschappij</p>
+                <p><?php echo $settings['water_company']; ?></p>
+            </div>    
+        </div>
+        
+        <a href="editSettings.php" class="btn btnSecondary">Instellingen bewerken</a>
+        <!--<a href="">Wachtwoord aanpassen</a>-->
       
     </div>
 
