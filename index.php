@@ -12,6 +12,15 @@
     // get top 3 devices with the most amount of water
     $devices = Device::getMostAmout($userId);
 
+    // get the amount of familymembers
+    $memberAmout = User::getAmountOfFamilyMembers($userId);
+
+    // set amount of water for 1 month
+    $water_amount = ($memberAmout['count'] + 1) * (99 * 31);
+
+    // set prices for the used water
+    $price = ($water_amount / 1000) * 4.3;
+
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -38,7 +47,7 @@
     <!-- begin of dashboardcontainer -->
     <div id="dashboardContainer">
         <div class="dashboardDiv" id="usage">
-            <h1 id="currentUsage">100 <span id="liter">L</span></h1>
+            <h1 id="currentUsage"><?php echo  $water_amount ?><span id="liter">L</span></h1>
             <img src="images/graph.png" alt="graph" id="graph">
         </div>
 
@@ -59,7 +68,7 @@
 
         <div class="dashboardDiv" id="pay">
             <h2>Te betalen</h2>
-            <h1>€99</h1>
+            <h1> € <?php echo $price ?> </h1>
         </div>
     </div>
     <!-- end of dashboardcontainer-->

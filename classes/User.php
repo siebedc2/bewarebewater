@@ -341,8 +341,18 @@ class User{
         return $settings;
     }
 
+    /* Extra feature */
     public static function doChangeSettings($houseType, $location, $waterCompany) {
         
+    }
+
+    public static function getAmountOfFamilyMembers($userId) {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("select count(*) as count from family where user_id = :user_id");
+        $statement->bindParam(":user_id", $userId);
+        $statement->execute();
+        $amount = $statement->fetch(PDO::FETCH_ASSOC);
+        return $amount;
     }
 
 
