@@ -40,6 +40,8 @@
     <div class="devices">
         <h2>Apparaat toevoegen</h2>
 
+        <!--<p>Hier kunt u een nieuw apparaat toevoegen waarbij het waterverbruik gemeten moet worden.</p>-->
+
         <form action="" method="POST">
             <div class="formInput">
                 <div class="formField">
@@ -52,7 +54,7 @@
                     <input type="text" name="kamer">
                 </div>
 
-                <input type="submit" value="Toevoegen" class="btn btnPrimary">
+                <input type="submit" value="Toevoegen" class="btn btnSecondary">
             </div>
         </form>
 

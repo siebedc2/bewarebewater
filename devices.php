@@ -39,19 +39,19 @@
     <div class="devices">
         <h2>Apparaten</h2>
 
-        <?php foreach($results as $result): ?>
-            <div class="device">
-                <p><?php echo $result['name']; ?></p>
-                <p><?php echo $result['amount'] . ' L'; ?></p>
-            </div>       
-        <?php endforeach; ?>
-
+        <div class="allDevices">
+            <?php foreach($results as $result): ?>
+                <div class="device">
+                    <p><?php echo $result['name']; ?></p>
+                    <p><?php echo $result['amount'] . ' l'; ?></p>
+                </div>       
+            <?php endforeach; ?>
+        </div>
     </div>
 
-    <a href="addDevice.php" class="btn btnSecondary">Toevoegen</a>
+    <a href="addDevice.php" class="btn btnSecondary">Apparaat toevoegen</a>
 
     <script src="js/script.js"></script>
-
 </body>
 
 </html>

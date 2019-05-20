@@ -73,7 +73,7 @@
                     <input type="text" name="watermaatschappij" placeholder="Typ hier..." value="<?php echo $settings['water_company']; ?>">
                 </div>
 
-                <input type="submit" value="Opslaan" name="upload" class="btn btnPrimary">
+                <input type="submit" value="Opslaan" name="upload" class="btn btnSecondary">
             </div>
         </form>
       

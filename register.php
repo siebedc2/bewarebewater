@@ -40,7 +40,7 @@
     <title>Be Ware Be Water - Register</title>
 </head>
 
-<body class="background">
+<body class="background backgroundSignup">
     <form action="" method="post">
         <h2>Welkom!</h2>
 

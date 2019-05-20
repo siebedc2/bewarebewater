@@ -75,10 +75,13 @@
             <?php endforeach; ?>       
         </div>
 
-        <div class="dashboardDiv" id="pay">
-            <h2>Te betalen</h2>
-            <h1> € <?php echo $price ?> </h1>
-        </div>
+
+        <a class="price" href="price.php">
+            <div class="dashboardDiv" id="pay">
+                <h2>Te betalen</h2>
+                <h1> € <?php echo round($price, 2) ?> </h1>
+            </div>
+        </a>
     </div>
     <!-- end of dashboardcontainer-->
 

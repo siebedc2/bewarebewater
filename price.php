@@ -9,9 +9,6 @@
     // get user_id from the user that is logged in
     $userId = User::getUserId();
 
-    // get top 3 devices with the most amount of water
-    $devices = Device::getMostAmout($userId);
-
     // get the amount of familymembers
     $memberAmout = User::getAmountOfFamilyMembers($userId);
 
@@ -24,6 +21,9 @@
     // set prices for the used water
     $price = ($currentUsage['total'] / 1000) * 4.3;
 
+    // average amount
+    $avg = User::avgAmount($userId);
+
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,7 @@
     <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-    <title>Be Ware Be Water - Tips</title>
+    <title>Be Ware Be Water - Te betalen</title>
 </head>
 <body>
     <div class="overlay"></div>
@@ -45,13 +45,27 @@
     </header>
 
     <div class="tips">
-        <h2>Tips</h2>
+        <h2>Te betalen</h2>
 
-        <h3>€ <?php echo $price ?></h3>
+        <div class="priceDiv1 priceDiv">
+            <img src="images/coins.png" alt="">   
+            <h3>€ <?php echo $price ?></h3>
+        </div>   
+
+        <div class="priceDiv vergelijking">
+            <h4>Vergelijking</h4>
+            <p>Is hetzelfde als 3 zwembaden</p>
+        </div>
         
-        <div class="avg"><p> gemiddelde van andere families </p></div>
+        <div class="priceDiv avg">
+            <h4>Gemiddelde</h4>
+            <p><?php echo $avg['avg'] . "L" ?></p>
+        </div>
 
-        <div class="tip"><p>tips</p></div>
+        <div class="priceDiv tip">
+            <h4>Tips</h4>
+            <p>Zorg voor volledig gevulde toestellen</p>
+        </div>
 
     </div>
     

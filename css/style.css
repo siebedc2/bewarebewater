@@ -12,6 +12,10 @@ body{
     height: 100vh;
 }
 
+.backgroundSignup {
+    height: 100%;
+}
+
 h2 {
     font-weight: bold;
     text-align: center;
@@ -25,15 +29,18 @@ h2 {
 }
 
 .formInput {
+    display: block;
     width: 80%;
     margin-top: 1.5em;
     text-align: left;
     margin-left: auto;
     margin-right: auto;
+    max-width: 350px;
 }
 
 .formField {
     padding-bottom: 2em;
+    
 }
 
 .formField label {
@@ -64,6 +71,7 @@ input[type=text], input[type=password] {
     font-size: 1em;
     display: block;
     margin: 0 auto;
+    
 }
 
 .btn {
@@ -74,7 +82,6 @@ input[type=text], input[type=password] {
     height: 40px;
     border-radius: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-top: 1em;
     text-decoration: none;
 }
 
@@ -85,18 +92,18 @@ input[type=text], input[type=password] {
 
 .btnSecondary {
     color: #707070;
-    width: 286px;
+    background-color: white;
+    width: 331px;
+    height: auto;
     display: block;
     text-align: center;
-    height: auto;
     padding: 10px 0px;
     margin: 0 auto;
     margin-top: 10px;
-    position: absolute;
     bottom: 30px;
     position: absolute;
     left: 50%;
-    margin-left: -143px
+    margin-left: -165.5px
 }
 
 form .redirectLink {
@@ -259,11 +266,15 @@ form .redirectLink {
     align-items: center;
 }
 
-.devices .device {
+.devices .device, .dataField {
     display: flex;
     justify-content: space-between;
-    margin: 20px 50px;
-
+    background-color: white;
+    width: 70%;
+    margin: 20px auto;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    padding: 0px 5%;
 }
 
 #dashboardContainer {
@@ -312,9 +323,57 @@ form .redirectLink {
     font-weight: bold;
 }
 
-.dataField {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 50px;
+.tips h3 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.tips {
+    text-align: center;
+} 
+
+.price {
+    text-decoration: none;
+    color: black;
+}
+
+.priceDiv {
+    background-color: white;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    padding: 2px 0px;
+}
+
+.priceDiv1 {
+    padding-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .dropdown_menu,
+    .mobile_navigation {
+        display: none;
+    }
+
+    .navigation {
+        display: block;
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    .navigation a {
+        color: black;
+        font-size: 1.2em;
+        text-decoration: none;
+        padding: .75em 1.25em;
+        box-sizing: border-box;
+        -webkit-transition: all .2s;
+        -o-transition: all .2s;
+        transition: all .2s;
+    }
+
+    .navigation a:hover {
+        opacity: .5;
+    }
 }

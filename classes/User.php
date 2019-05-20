@@ -369,10 +369,18 @@ class User{
         $marge = $water_amount - 200;
 
         if( $usedAmount > $marge) {
-            $message = "Alert! You have almost reached your montly limit! Don not cross it!";
+            $message = "Opgepast! U heeft bijna uw maandelijkse limiet bereikt!";
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
+    }
 
+    public static function avgAmount($userId) {
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("select round(avg(amount)) as avg from device where not user_id = :user_id");
+        $statement->bindParam(":user_id", $userId);
+        $statement->execute();
+        $avg = $statement->fetch(PDO::FETCH_ASSOC);
+        return $avg;
     }
 
 
