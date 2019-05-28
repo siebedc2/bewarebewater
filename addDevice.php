@@ -12,8 +12,16 @@
         // get user_id from the user that is logged in
         $userId = User::getUserId();
 
-        // insert device in the database
-        $results = Device::addDevice($userId, $room, $device);
+        if(Device::addDevice($userId, $room, $device)) {
+            // go to the devices-page
+            header("location: devices.php");
+        }
+
+        else {
+            // give error message
+            $error = true;
+        }
+
     }
 
 ?><!DOCTYPE html>
@@ -43,6 +51,13 @@
         <!--<p>Hier kunt u een nieuw apparaat toevoegen waarbij het waterverbruik gemeten moet worden.</p>-->
 
         <form action="" method="POST">
+            <?php if (isset($error)): ?>
+            <div class="formError">
+                <p>
+                    We kunnen het apparaat niet toevoegen, probeer opnieuw
+                </p>
+            </div>
+            <?php endif; ?>
             <div class="formInput">
                 <div class="formField">
                     <label for="apparaat">Apparaat</label>

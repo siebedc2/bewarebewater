@@ -26,6 +26,8 @@
             "status" => "Success",
             "message" => "Added to you family!"
         ];
+
+        header("location: profile.php");
     }
 
     else {
