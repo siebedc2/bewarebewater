@@ -56,7 +56,8 @@
     <div class="familyMembers">
         <?php foreach ($results as $result): ?>
             <!-- Echo the profile picture of the person-->
-            <div class="familyMember">
+            <div class="familyMember" data-id="<?php echo $result['id'] ?>">
+                <p class="delete">X</p>
                 <div class="profileImg">
                     <img src="images/profilePictures/<?php echo $result['avatar'] ?>" alt="Profile image">
                     <div class="backimg"></div>
@@ -72,7 +73,9 @@
 
     <a href="addFamilyMember.php" class="btn btnSecondary">Familielid toevoegen</a>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
+    <script src="js/deleteMember.js"></script>
 </body>
 
 </html>

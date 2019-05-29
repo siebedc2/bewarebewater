@@ -383,5 +383,14 @@ class User{
         return $avg;
     }
 
+    public static function removeFamilyMember($memberId){
+        $userId = User::getUserId();
+
+        $conn = Db::getConnection();
+        $statement = $conn->prepare("delete from family where member_id = :memberId and user_id = :userId");
+        $statement->bindParam(":memberId", $memberId);
+        $statement->bindParam(":userId", $userId);
+        return $statement->execute();
+    }
 
 }

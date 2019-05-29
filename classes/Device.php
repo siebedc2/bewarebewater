@@ -6,9 +6,8 @@
             $statement->bindParam(":device", $device);
             $statement->bindParam(":room", $room);
             $statement->bindParam(":userId", $userId);
-            $statement->execute();
-            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-            return $results;
+            return $statement->execute();
+            
         }
 
         public static function addAmount($amount, $userId) {
@@ -26,6 +25,13 @@
             $statement->execute();
             $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             return $results;
+        }
+
+        public static function removeDevice($deviceId){
+            $conn = Db::getConnection();
+            $statement = $conn->prepare("delete from device where id = :id");
+            $statement->bindParam(":id", $deviceId);
+            return $statement->execute();
         }
 
     }

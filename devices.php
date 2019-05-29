@@ -41,9 +41,10 @@
 
         <div class="allDevices">
             <?php foreach($results as $result): ?>
-                <div class="device">
+                <div class="device" data-id="<?php echo $result['id'] ?>">
                     <p><?php echo $result['name']; ?></p>
                     <p><?php echo $result['amount'] . ' l'; ?></p>
+                    <p class ="delete">X</p>
                 </div>       
             <?php endforeach; ?>
         </div>
@@ -51,7 +52,9 @@
 
     <a href="addDevice.php" class="btn btnSecondary">Apparaat toevoegen</a>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
+    <script src="js/deleteDevice.js"></script>
 </body>
 
 </html>
