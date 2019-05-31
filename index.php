@@ -61,8 +61,10 @@
         </div>
 
         <div class="dashboardDiv" id="add">
-            <h2>Apparaat toevoegen</h2>
-            <a href="addDevice.php"><img src="images/add.png" alt="plus"></a>
+            <div>
+                <h2>Apparaat toevoegen</h2>
+                <a href="addDevice.php"><img src="images/add.png" alt="plus"></a>
+            </div>
         </div>
         
         <div class="dashboardDiv" id="ranking">
@@ -76,12 +78,15 @@
         </div>
 
 
-        <a class="price" href="price.php">
+        <a href="price.php">
             <div class="dashboardDiv" id="pay">
-                <h2>Te betalen</h2>
-                <h1> € <?php echo round($price, 2) ?> </h1>
+                <a class="price" href="price.php">
+                    <h2>Te betalen</h2>
+                    <h1> € <?php echo round($price, 2) ?> </h1>
+                </a>
             </div>
         </a>
+        
     </div>
     <!-- end of dashboardcontainer-->
 

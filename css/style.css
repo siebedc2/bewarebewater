@@ -315,6 +315,10 @@ form .redirectLink {
     margin: 0px 50px;
 }
 
+#pay{
+    cursor: pointer;
+}
+
 #pay h1 {
     text-align: center;
     font-size: 30px;
@@ -375,5 +379,49 @@ form .redirectLink {
 
     .navigation a:hover {
         opacity: .5;
+    }
+
+    .background{
+        background-image: url(../images/background-desktop.png);
+    }
+
+    #dashboardContainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #usage{
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+        height: 100%;
+    }
+
+    #ranking{
+        grid-row: 1 / span 1;
+        grid-column: 2 / span 1;
+        height: 100%;
+    }
+
+    #add{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+        height: 100%;
+    }
+
+    #pay{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-row: 2 / span 1;
+        grid-column: 2 / span 1;
+        height: 100%;
+    }
+
+    #pay, #add{
+        margin-top: 3%;
     }
 }

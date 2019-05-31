@@ -3,7 +3,7 @@
         <a class="navigation_link" href="index.php">Home</a>
         <a class="navigation_link" href="devices.php">Apparaten</a>
         <a class="navigation_link" href="profile.php">Profiel</a>
-        <a class="navigation_link" href="#">Instellingen</a>
+        <a class="navigation_link" href="settings.php">Instellingen</a>
         <a class="navigation_link" href="logout.php">Logout</a>
     </nav>
 
