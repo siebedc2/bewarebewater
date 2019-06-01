@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="360" height="640" viewBox="0 0 360 640">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0083b0"/>
+      <stop offset="1" stop-color="#00b4db"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0.699" y1="0.519" x2="0.469" y2="0" xlink:href="#linear-gradient"/>
+    <clipPath id="clip-SVG_mobile">
+      <rect width="360" height="640"/>
+    </clipPath>
+  </defs>
+  <g id="SVG_mobile" data-name="SVG mobile" clip-path="url(#clip-SVG_mobile)">
+    <rect width="360" height="640" fill="#fff"/>
+    <path id="Path_9" data-name="Path 9" d="M-1343.366-464.2s42.44-10.3,49.8,23.305,19.135,68.2-4.416,84.39-42.195,15.455-42.195,15.455L-1344.34-462.2Z" transform="translate(1334 982)" opacity="0.496" fill="url(#linear-gradient)"/>
+    <path id="Path_10" data-name="Path 10" d="M-1272.478-998.227s-53.068,40.63-4.561,123.548c31.923,50.995,77.943,149.667,54.311,225.537s-77.943,115.67-126.035,123.133-20.729-476.57-20.729-476.57Z" transform="translate(1334 982)" opacity="0.496" fill="url(#linear-gradient)"/>
+    <path id="Path_11" data-name="Path 11" d="M-974-1012.842s-117.3,141.79-62.577,222.634c20.315,29.436,21.973,41.874,77.528,62.6S-974-1012.842-974-1012.842Z" transform="translate(1334 982)" opacity="0.496" fill="url(#linear-gradient)"/>
+    <path id="Path_12" data-name="Path 12" d="M-1161.68-305.863s8.466-127.036-21.8-178.445c-16.578-44.321-22.977-137.887,119.642-162.348S-944.02-528.394-944.02-528.394l7.463,253.418Z" transform="translate(1334 982)" opacity="0.496" fill="url(#linear-gradient-4)"/>
+  </g>
+</svg>
