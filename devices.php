@@ -42,8 +42,8 @@
         <div class="allDevices">
             <?php foreach($results as $result): ?>
                 <div class="device" data-id="<?php echo $result['id'] ?>">
-                    <p><?php echo $result['name']; ?></p>
-                    <p><?php echo $result['amount'] . ' l'; ?></p>
+                    <p class="deviceName"><?php echo $result['name']; ?></p>
+                    <p class="deviceAmount"><?php echo $result['amount'] . ' l'; ?></p>
                     <p class ="delete">X</p>
                 </div>       
             <?php endforeach; ?>

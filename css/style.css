@@ -106,6 +106,20 @@ input[type=text], input[type=password] {
     margin-left: -165.5px
 }
 
+.delete{
+    cursor: pointer;
+    display: inline-block;
+    z-index: 1;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    background-color: red;
+    border-radius: 100%;
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+}
+
 form .redirectLink {
     text-align: center;
     font-size: 12px;
@@ -233,6 +247,10 @@ form .redirectLink {
     width: 100%;
 }
 
+.familyMember{
+    position: relative;
+}
+
 .familyMember .profileImg {
     display: block;
     margin: 0;
@@ -264,6 +282,12 @@ form .redirectLink {
     margin: 30px auto;
     justify-content: space-between;
     align-items: center;
+}
+
+.familyMember .delete{
+    position: absolute;
+    right: 0;
+    top: 30px;
 }
 
 .devices .device, .dataField {
@@ -424,4 +448,27 @@ form .redirectLink {
     #pay, #add{
         margin-top: 3%;
     }
+
+    .profileImg{
+        height: 180px;
+    }
+
+    .profileImg img{
+        margin-top: 3%;
+    }
+
+    .familyMember .profileImg{
+        height: 160px;
+    }
+
+    .familyMember .profileImg img{
+        margin-top: 50px;
+    }
+
+    .familyMember .delete{
+        top: 10px;
+    }
+
+
+
 }
